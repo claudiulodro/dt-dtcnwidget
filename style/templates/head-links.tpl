@@ -12,7 +12,6 @@
 		<script src="/style/dom.js" type="text/javascript"></script>
 		<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
 
-        <script type="text/javascript" language="javascript1.2">
         // <![CDATA[
 {if $_CONSTANTS.REF_USE_KEYBOARD}
             Refeed.App.registerHandler(Refeed.App, document, 'onKeyPress');

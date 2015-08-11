@@ -1,18 +1,3 @@
-{*----------------------------------------
-$Id: page-addfeed.tpl,v 1.6 2005/06/26 23:56:07 migurski Exp $
-vim: ts=4 foldcolumn=4 foldmethod=marker
-
-This file is part of Reblog: http://reblog.org
-A derivative work of Feed On Feeds: http://feedonfeeds.com
-
-Distributed under the Gnu Public License, see LICENSE
-
-Copyright ©2004 Michael Frumin, Michal Migurski
-mike@stamen.com, http://stamen.com
-mfrumin@eyebeam.org, http://eyebeam.org
-
-page-addfeed.tpl - page for adding feeds from various sources
-----------------------------------------*}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -30,14 +15,7 @@ page-addfeed.tpl - page for adding feeds from various sources
         </div>
         
         <div id="body">
-        
-            <div class="announcement">
-                <a href="javascript:void(location.href='{$add_url}?rss_url='+escape(location))">reFeed subscribe</a>
-                - This bookmarklet will attempt to subscribe to whatever page you are on. 
-                <br />
-                Drag it to your toolbar and then click on it when you are at a weblog you like. 
-            </div>
-    
+            
             <form method="post" action="{$add_script}" enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
     

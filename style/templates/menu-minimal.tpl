@@ -25,6 +25,5 @@ menu-minimal.tpl - minimal top menu, for spoke pages
     {if $return}
         <li><a href="{$return|htmlspecialchars}">&lt;&lt;&nbsp;Return</a></li>
     {/if}
-    <li><a href="{$refeed_root}/" target="_top">To Feed List</a></li>
-    <li><a href="{$refeed_root}/frames/" target="_top">To Frames</a></li>
+    <li><a href="/" target="_top">To Feed List</a></li>
 </ul>

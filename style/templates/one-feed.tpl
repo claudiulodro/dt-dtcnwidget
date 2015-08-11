@@ -1,19 +1,3 @@
-{*----------------------------------------
-$Id: one-feed.tpl,v 1.11 2005/04/19 22:47:20 mfrumin Exp $
-vim: ts=4 foldcolumn=4 foldmethod=marker
-
-This file is part of Reblog: http://reblog.org
-A derivative work of Feed On Feeds: http://feedonfeeds.com
-
-Distributed under the Gnu Public License, see LICENSE
-
-Copyright ©2004 Michael Frumin, Michal Migurski
-mike@stamen.com, http://stamen.com
-mfrumin@eyebeam.org, http://eyebeam.org
-
-one-feed.tpl - a single feed, in a table row
-----------------------------------------*}
-
 {if $feed_select.public}
     {assign var="class_public" value="public"}
 {else}
@@ -63,18 +47,17 @@ one-feed.tpl - a single feed, in a table row
                     title="Mark this feed as private"
                     href="{$refeed_root}/do.php?action=mark-feed-private&id={$feed_select.id}&return={$REQUEST_URI|urlencode}"
                     onclick="return toggle_public('feed', {$feed_select.id}, {if $framed}1{else}0{/if});">
-                    <img id="buttonPublic{$feed_select.id}" class="button" src="{$refeed_root}/{$style_dir}/images/public-feed.gif" border="0" /></a>
+                    <img id="buttonPublic{$feed_select.id}" class="button" src="{$style_dir}/images/public-feed.gif" border="0" /></a>
             {else}
                 <a id="controlPublic{$feed_select.id}" class="control control-public"
                     title="Mark this feed as public"
                     href="{$refeed_root}/do.php?action=mark-feed-public&id={$feed_select.id}&return={$REQUEST_URI|urlencode}"
                     onclick="return toggle_public('feed', {$feed_select.id}, {if $framed}1{else}0{/if});">
-                    <img id="buttonPublic{$feed_select.id}" class="button" src="{$refeed_root}/{$style_dir}/images/private-feed.gif" border="0" /></a>
+                    <img id="buttonPublic{$feed_select.id}" class="button" src="{$style_dir}/images/private-feed.gif" border="0" /></a>
             {/if}
         </td>
         <td class="actions">
             <a href="update.php?return={$REQUEST_URI|urlencode}&amp;feed={$feed_select.feed.id}">update</a>
-            / <a href="do.php?action=mark-feed-read&amp;return={$REQUEST_URI|urlencode}&amp;feed={$feed_select.feed.id}">archive all</a>
             / <a href="delete.php?return={$REQUEST_URI|urlencode}&amp;feed={$feed_select.feed.id}" onclick="return confirm('Delete feed {$feed_select.feed.title|escape:"javascript"}?');">delete</a>
         </td>
     {/if}

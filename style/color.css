@@ -32,13 +32,6 @@ body
 	background-color: #fff;
 } 
 
-.logo
-{
-	background-image: url("images/logo.gif");
-	background-repeat: no-repeat;
-	background-position: right 16px;
-} 
-
 #body
 {
 	background-color: #eee;

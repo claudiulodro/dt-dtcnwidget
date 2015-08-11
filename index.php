@@ -1,21 +1,6 @@
 <?php
-/*----------------------------------------
-$Id: index.php,v 1.18 2005/04/19 21:24:47 mfrumin Exp $
-vim: ts=4 foldcolumn=4 foldmethod=marker
-
-This file is part of Reblog: http://reblog.org
-A derivative work of Feed On Feeds: http://feedonfeeds.com
-
-Distributed under the Gnu Public License, see LICENSE
-
-Copyright ©2004 Michael Frumin, Michal Migurski
-mike@stamen.com, http://stamen.com
-mfrumin@eyebeam.org, http://eyebeam.org
-
-index.php - the 'control panel', a list of all feeds
-----------------------------------------*/
 error_reporting(E_ALL);
-    require_once('init.php');
+require_once('init.php');
 
     $page = new RF_Page();
 

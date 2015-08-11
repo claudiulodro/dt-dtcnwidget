@@ -16,7 +16,7 @@ rss-reblog-0.9.php - exports public items as RSS
 ----------------------------------------*/
 
 header('Content-type: text/xml');
-
+header("Access-Control-Allow-Origin: *");
 $SUPPRESS_AUTH = 1;
 ini_set("include_path", join(":", array(ini_get("include_path"), dirname(__FILE__)."/..")));
 require_once('init.php');
