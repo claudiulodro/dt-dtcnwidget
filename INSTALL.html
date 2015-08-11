@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> ReFeed Installation </title> 
+	<link rel="stylesheet" href="softwarestyle.css" type="text/css" />
+    <style type="text/css" title="text/css">
+    <!--
+    
+        body
+        {
+           font-size: 12px;
+           line-height: 16px;
+           margin: 0;
+           padding: 1em 2em;
+        }
+        
+        #toc
+        {
+            float: right;
+            width: 320px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #contents
+        {
+            width: 640px;
+            margin: 0;
+            padding: 0;
+        }
+        
+    -->
+    </style>
+</head>
+<body>
+    <h1>ReFeed Installation</h1> 
+    <div id="contents">
+        <ol>
+            <li>
+                <p>
+                    Edit the file <code>config.php</code> with your local configuration information:
+                </p>
+                <dl>
+                    <dt><code>REF_TIME_OFFSET</code></dt>
+                        <dd>Difference, in hours, between your server and your local time zone.</dd>
+                    <dt><code>REF_USE_KEYBOARD</code></dt>
+                        <dd>Use the keyboard-sensitive navigation and functionality</dd>
+                    <dt><code>REF_DB_HOST</code></dt>
+                        <dd>Host where your MySQL server is located, often "localhost".</dd>
+                    <dt><code>REF_DB_USER</code>, <code>REF_DB_PASS</code></dt>
+                        <dd>Database user account and password.
+                            Be sure that the database user you set up has <code>create</code>, <code>drop</code> and <code>alter</code> privileges on the refeed database, for this installation. 
+                            Normal use requires <code>select</code>, <code>insert</code>, <code>update</code> and <code>delete</code> privileges.</dd>
+                    <dt><code>REF_DB_DBNAME</code></dt>
+                        <dd>Name of your database.</dd>
+                    <dt><code>REF_HTTPAUTH_NAME</code>, <code>REF_HTTPAUTH_PASS</code></dt>
+                        <dd>User name and password  for HTTP authentication: if set, you will be prompted forthis information when you attempt to use the parts of reFeed that change the database.</dd>
+                    <dt><code>REF_FEED_TITLE</code></dt>
+                        <dd>Title of your outgoing feed.</dd>
+                    <dt><code>REF_FEED_DESCRIPTION</code></dt>
+                        <dd>Description of your outgoing feed.</dd>
+                    <dt><code>REF_GUID_TAG_PREFIX</code></dt>
+                        <dd>Globally unique identifying prefix for items in your outgoing feed. If you don't know what this is, odds are you don't need to change it.</dd>
+                </dl>
+            </li>
+            <li>
+                <p>
+                    Upload the entire tree to wherever on your server you want reFeed to live. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Create a directory called <code>cache</code> inside your reFeed directory, and make it world-writeable (<code>chmod a+rwX cache</code>). 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Load the page <code>http://{your server}/{wherever you put reFeed}/install.php</code>. The installer will first check that it can connect to your DB, and then attempt to upgrade your database tables from a previous version (i.e. Feed on Feeds or ReceSS), or create new ones. 
+                </p>
+                <p>
+                    Then, it will attempt to create a subdirectory called cache where it will store cached copies of RSS feeds. This part of the installation may fail, as your PHP process may not have permission to create a directory. You may need to create the directory {wherever you uploaded reFeed to}/cache/ yourself, and make sure it is writable by the PHP process. If you needed to do that, reload <code>install.php</code>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Play around and figure out how it works. It's pretty straightforward. Or see the <a href="README.html">README</a> file in this directory. 
+                </p>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+
+                              ReFeed Instructions
+
+Table of Contents
+
+     * Overview
+     * Installation
+     * Use/Features
+          + View Feeds
+          + Add Feeds
+          + View Posts
+          + Keyboard Sensitivity
+     * Special Features
+          + Archive/Disinter
+          + Publish/Revoke
+          + Primary Link Selection
+          + Metadata
+          + Republishing
+     * License
+
+Overview
+
+   reFeed is a PHP-based server-side RSS aggregator/reader that allows
+   for quick, easy, iterative filtering, editing and re-syndicating of
+   posts. Its output is an RSS feed that contains numerous metadata
+   necessary to re-publish posts with appropriate attribution.
+
+   reFeed is derived from a project called Feed-on-Feeds by Steve
+   Minutillo (http://minutillo.com/steve/feedonfeeds/).
+
+Installation
+
+   Please see the INSTALL file in this directory for installation
+   instructions.
+
+Use/Features
+
+     * The operation of reFeed should be pretty self-explanatory. Like
+       most other news/feed readers, it has a page to view all your
+       feeds, a page to add feeds, a page to view posts for one or more
+       feeds, and a viewing mode that uses frames, for easier switching
+       between feeds. We hope that these functions are self-explanatory.
+         1. View feeds
+            Screenshot of page of feeds 
+         2. Add feeds
+            Accessed from "Add Feeds" link in header.
+            Screenshot of add feeds interface 
+         3. View posts
+            accessed from "View" links in header, or by clicking on the
+            title of a feed
+            Screenshot of page of items 
+         4. Keyboard sensitivity:
+            reFeed is now almost entirely controllable using keyboard
+            shortcuts. Type ? on any screen to see what keyboard
+            functionality is available. If you hate it, it can be
+            disabled with a configuration flag in the config file (see
+            INSTALL.html).
+            Screenshot of keyboard menu 
+
+Special Features
+
+     * Where reFeed differs from typical feed readers is in the
+       funcionality it adds to facilitate republishing of the posts you
+       are reading. Before describing this functionality, there is some
+       terminology worth establishing:
+         1. Archive/Disnter
+               o Archive
+                 To Archive an item is to mark it as read so it is no
+                 longer appears when viewing new items.
+                 Archive button
+               o Disinter
+                 To Disinter an item is to mark it as unread so it will
+                 appear when viewing new items.
+                 Disinter button
+         2. Publish/Revoke
+               o Publish Item
+                 To Publish an item is to mark it for inclusion in your
+                 outgoing RSS feeds, presumably to be consumed by other
+                 readers or a reBlog plugin.
+                 Publish button
+               o Revoke Item
+                 To Revoke an item is to make it no no longer public
+                 Revoke button
+               o Publish Feed
+                 To Publish a feed is to set the default state for items
+                 coming from that feed as published (note this only
+                 applies to items forthcoming, not items currently in the
+                 database).
+                 Revoke button
+               o Revoke Feed
+                 To Revoke a feed is to reset the default state so that
+                 fortcoming items are not marked as published.
+                 Publish button
+         3. Primary Link Selection/Unselection
+               o Selected Link
+                 To Select a link within an item is to mark that link as
+                 the primary link that will be included with the item in
+                 any output feed.
+                 Selected Link button
+               o Unselected Link
+                 The only way to Unselect a link is to Select a different
+                 link in that item.
+                 Unselected Link button
+         4. Metadata
+               o Comments
+                 You can attach your personal commentray to items that
+                 you will publish.
+                 Tags
+                 ReFeed lets you tag posts. Really it is just a text
+                 field that you can populate with keywords, for use in
+                 tag- and category-supporting systems such as
+                 del.icio.us, flickr, and Movable Type.
+                 Screenshot of comment form 
+     * While the basic feed-reading in reFeed should speak for itself,
+       the re-publishing features may require some explanation:
+         1. Primary Link Selection
+            On the view page, for items that have multiple links embedded
+            within their content, you are able to select which link
+            should be the primary link in the output feed. Notice that
+            each link (including the main title link) has an accompanying
+            star. Simply select the preferred star to select the main
+            link for that item.
+            Screenshot of page of items 
+         2. Preview/Edit page
+            This page which allows you to edit and preview any one item.
+            You can change the title, primary link, or content of the
+            item, and add comments and subject tags.
+            This page also allows you to preview the item in a
+            user-defined visual format so that you can see how the item
+            will look in your final output blog. Edit
+            thestyle/templates/page-preview.tplfile (include the link to
+            your stylesheet) to match the HTML formatting in your nicely
+            designed reBlog.
+            Screenshot of preview/edit interface 
+         3. RSS output
+            All items marked as published within the last 24 hours, or
+            published in the past but re-edited within the last 24 hours,
+            are displayed in the rss output (the rss.php page). This feed
+            includes metadata for proper attribution of the original item
+            author/blog/etc.
+         4. Incoming Item Updates
+            On import from your input feeds, items are not uniquely
+            identified by simply by their feed and by their link. Now,
+            items are uniquely identified one of two ways, depending on
+            the structure of their source feed:
+            If the source feed contains some kind of global unique
+            identifier (GUID) for a item, such as a <guid> or <id> or
+            <dc:identifier> element, this GUID is used. If a item is
+            updated in its source feed, the same item is updateed in
+            reFeed, and the items is marked as unread.
+            Otherwise, items are identified uniquely by their feed,
+            title, link, and content. This has positive effect of of
+            catching updates to items in your input RSS feeds. It also
+            has the consequence of retaining very similar copies of the
+            same item if reFeed checks the same feed repeatedly while the
+            author is updating his/her items.
+            To keep from being assaulted with multiple copies of the same
+            item when pouring through new content, reFeed has implemented
+            the following policy: On import of any item, all earlier
+            items from the same feed sharing the same link that have not
+            been marked as read or published will be marked as read. They
+            are still accessible, but only the newest version will be
+            shown when viewing new items.
+
+License
+
+   reFeed is distributed under the GPL (see the LICENSE file in this
+   directory), though some of its included libraries (in./library/) are
+   not.

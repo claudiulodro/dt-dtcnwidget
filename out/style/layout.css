@@ -1,0 +1,149 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+p, blockquote { margin: 8px 0px; }
+
+blockquote
+{
+	margin-left: 8px;
+	padding-left: 8px;
+	border-width: 0px 0px 0px 1px;
+	border-style: none none none dashed;
+}
+
+#head, #body, #foot
+{
+    position: relative;
+    clear: both;
+}
+
+#head
+{
+    padding-top: 16px;
+    height: 7em;
+}
+
+#body
+{
+	padding: 16px 32px;
+}
+
+#foot
+{
+    padding-bottom: 16px;
+    height: 7em;
+}
+
+h1
+{
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#head h2
+{
+    margin-left: 186px;
+}
+
+#logo
+{
+	position: absolute;
+	display: block;
+	top: 16px;
+	right: 32px;
+	width: 145px;
+	height: 52px;
+	padding: 0;
+	margin: 0;
+	background-image: url("images/logo.gif");
+	background-repeat: no-repeat;
+	background-position: right top;
+	color: transparent;
+}
+
+    #logo .text { display: none; } 
+
+ul.menu
+{
+	display: block;
+	list-style: none;
+	float: left;
+	clear: left;
+	margin: 0 0 0 32px;
+	padding: 0;
+}
+
+ul.menu li
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+ul.menu li.label
+{
+	margin-right: 16px;
+	width: 128px;
+	text-align: right;
+}
+
+ul.menu li a
+{
+	display: block;
+	padding: 0 8px;
+	margin: 0;
+	border-style: none dashed;
+	border-width: 0 1px;
+}
+
+ul.menu li a, ul.menu li.label
+{
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.item
+{
+	margin: 0 0 16px 0;
+	position: relative;
+	border-width: 0px 1px 1px 1px;
+	border-style: none solid solid solid;
+	clear: both;
+}
+
+.item .header
+{
+	border-width: 1px 0px 1px 0px;
+	border-style: solid none solid none;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+
+.item .header h2, .item .header h3, .item .header p { margin: 0px 16px; }
+.item .header h3 { margin-top: 8px; }
+.item .header h2 { margin-bottom: 4px; }
+.item .header p { margin-bottom: 8px; }
+
+.item .body
+{
+	margin: 0px;
+	padding: 8px 32px 16px 16px;
+}
+
+    .item .body img { margin: 0 1em 1em 0; }
+    .item .body img.link-select { margin: 0; }
+
+.announcement
+{
+	border-width: 1px;
+	border-style: dashed;
+	/* width: 62%; */
+	padding: 0.5em 1em;
+	margin: 1em 0 1em 0;
+}

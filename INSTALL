@@ -1,0 +1,61 @@
+
+                              ReFeed Installation
+
+    1. Edit the file config.php with your local configuration
+       information:
+
+        REF_TIME_OFFSET
+                Difference, in hours, between your server and your local
+                time zone.
+
+        REF_USE_KEYBOARD
+                Use the keyboard-sensitive navigation and functionality
+
+        REF_DB_HOST
+                Host where your MySQL server is located, often
+                "localhost".
+
+        REF_DB_USER, REF_DB_PASS
+                Database user account and password. Be sure that the
+                database user you set up has create, drop and alter
+                privileges on the refeed database, for this installation.
+                Normal use requires select, insert, update and delete
+                privileges.
+
+        REF_DB_DBNAME
+                Name of your database.
+
+        REF_HTTPAUTH_NAME, REF_HTTPAUTH_PASS
+                User name and password for HTTP authentication: if set,
+                you will be prompted forthis information when you attempt
+                to use the parts of reFeed that change the database.
+
+        REF_FEED_TITLE
+                Title of your outgoing feed.
+
+        REF_FEED_DESCRIPTION
+                Description of your outgoing feed.
+
+        REF_GUID_TAG_PREFIX
+                Globally unique identifying prefix for items in your
+                outgoing feed. If you don't know what this is, odds are
+                you don't need to change it.
+
+    2. Upload the entire tree to wherever on your server you want reFeed
+       to live.
+    3. Create a directory called cache inside your reFeed directory, and
+       make it world-writeable (chmod a+rwX cache).
+    4. Load the page http://{your server}/{wherever you put
+       reFeed}/install.php. The installer will first check that it can
+       connect to your DB, and then attempt to upgrade your database
+       tables from a previous version (i.e. Feed on Feeds or ReceSS), or
+       create new ones.
+       Then, it will attempt to create a subdirectory called cache where
+       it will store cached copies of RSS feeds. This part of the
+       installation may fail, as your PHP process may not have permission
+       to create a directory. You may need to create the directory
+       {wherever you uploaded reFeed to}/cache/ yourself, and make sure
+       it is writable by the PHP process. If you needed to do that,
+       reload install.php.
+    5. Play around and figure out how it works. It's pretty
+       straightforward. Or see the README file in this directory.

@@ -1,0 +1,42 @@
+body, p, div
+{
+	font-family: verdana, sans-serif;
+	font-size: 11px;
+	line-height: 16px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	font-family: helvetica, arial, verdana, sans-serif;
+	font-weight: bold;
+}
+
+h1, h2
+{
+	font-size: 20px;
+	line-height: 16px;
+	letter-spacing: -1px;
+}
+
+h3, h4, h5, h6
+{
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0px;
+}
+
+.item .header a { text-decoration: none; }
+.item .header a:hover, .item .header a:active { text-decoration: none; }
+
+.item .header p, .item .header .preview-edit, .feeds tr th
+{
+    font-size: 10px;
+    line-height: 12px;
+	font-weight: normal;
+}
+
+.item .header .preview-edit
+{
+	font-family: verdana, sans-serif;
+	letter-spacing: 0px;
+}

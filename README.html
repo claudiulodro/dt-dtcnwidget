@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>ReFeed Instructions</title>
+	<link rel="stylesheet" href="softwarestyle.css" type="text/css">
+    <style type="text/css" title="text/css">
+    <!--
+    
+        
+    -->
+    </style>
+</head>
+<body>
+    <h1>ReFeed Instructions</h1>
+    <div id="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li>
+                <a href="#overview">Overview</a>
+            </li>
+            <li>
+                <a href="#installation">Installation</a>
+            </li>
+            <li>
+                <a href="#features">Use/Features</a>
+                <ul>
+                    <li>
+                        <a href="#view-feeds">View Feeds</a>
+                    </li>
+                    <li>
+                        <a href="#add-feeds">Add Feeds</a>
+                    </li>
+                    <li>
+                        <a href="#view-posts">View Posts</a>
+                    </li>
+                    <li>
+                        <a href="#kb">Keyboard Sensitivity</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#special">Special Features</a>
+                <ul>
+                    <li>
+                        <a href="#archive">Archive/Disinter</a>
+                    </li>
+                    <li>
+                        <a href="#publish">Publish/Revoke</a>
+                    </li>
+                    <li>
+                        <a href="#link_select">Primary Link Selection</a>
+                    </li>
+                    <li>
+                        <a href="#metadata">Metadata</a>
+                    </li>
+                    <li>
+                        <a href="#republish">Republishing</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#license">License</a>
+            </li>
+        </ul>
+    </div>
+    <div id="contents">
+        <h2><a name="overview"></a>Overview</h2>
+        <p>
+            reFeed is a PHP-based server-side RSS aggregator/reader that allows for quick, easy, iterative filtering, editing and re-syndicating of posts. Its output is an RSS feed that contains numerous metadata necessary to re-publish posts with appropriate attribution.
+        </p>
+        <p>
+            reFeed is derived from a project called Feed-on-Feeds by Steve Minutillo (<a href="http://minutillo.com/steve/feedonfeeds/">http://minutillo.com/steve/feedonfeeds/</a>).
+        </p>
+        <h2><a name="installation"></a>Installation</h2>
+        <p>
+            Please see the <a href="INSTALL.html">INSTALL</a> file in this directory for installation instructions.
+        </p>
+        <h2><a name="features"></a>Use/Features</h2>
+        <ul>
+            <li>
+                <p>
+                    The operation of reFeed should be pretty self-explanatory. Like most other news/feed readers, it has a page to view all your feeds, a page to add feeds, a page to view posts for one or more feeds, and a viewing mode that uses frames, for easier switching between feeds. We hope that these functions are self-explanatory.
+                </p>
+                <ol>
+                    <li>
+                        <h3><a name="view-feeds"></a>View feeds</h3>
+                        <p>
+                            <a href="doc_img/01-feeds-by-name-kb-on.png" title="Click to view a full-size version of this screen shot"><img src="doc_img/01-feeds-by-name-kb-on.small.png" alt="Screenshot of page of feeds" width="467" height="315" border="1"></a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a name="add-feeds"></a>Add feeds</h3>
+                        <p>
+                            Accessed from "Add Feeds" link in header.
+                        </p>
+                        <p>
+                            <a href="doc_img/09-add-feed.png" title="Click to view a full-size version of this screen shot"><img src="doc_img/09-add-feed.small.png" alt="Screenshot of add feeds interface" width="467" height="315" border="1"></a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a name="view-posts"></a>View posts</h3>
+                        <p>
+                            accessed from "View" links in header, or by clicking on the title of a feed
+                        </p>
+                        <p>
+                            <a href="doc_img/10-items-kb-on.png" title="Click to view a full-size version of this screen shot"><img src="doc_img/10-items-kb-on.small.png" alt="Screenshot of page of items" width="467" height="315" border="1"></a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3><a name="kb"></a>Keyboard sensitivity:</h3>
+                        <p>
+                            reFeed is now almost entirely controllable using keyboard shortcuts. Type <em>?</em> on any screen to see what keyboard functionality is available. If you hate it, it can be disabled with a configuration flag in the config file (see <a href="INSTALL.html">INSTALL.html</a>).
+                        </p>
+                        <p>
+                            <a href="doc_img/11-items-help.png" title="Click to view a full-size version of this screen shot"><img src="doc_img/11-items-help.small.png" alt="Screenshot of keyboard menu" width="467" height="315" border="1"></a>
+                        </p>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <h2><a name="special"></a>Special Features</h2>
+        <ul>
+            <li>
+                <p>
+                    Where reFeed differs from typical feed readers is in the funcionality it adds to facilitate republishing of the posts you are reading. Before describing this functionality, there is some terminology worth establishing:
+                </p>
+                <ol>
+                    <li>
+                        <h3><a name="archive"></a>Archive/Disnter</h3>
+                        <ul>
+                            <li>
+                                <h4>Archive</h4>
+                                <p>
+                                    To <em>Archive</em> an item is to mark it as <em>read</em> so it is no longer appears when viewing <em>new</em> items.
+                                </p>
+                                <p>
+                                    <img src="style/images/unread.gif" alt="Archive button">
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Disinter</h4>
+                                <p>
+                                    To <em>Disinter</em> an item is to mark it as <em>unread</em> so it will appear when viewing <em>new</em> items.
+                                </p>
+                                <p>
+                                    <img src="style/images/read.gif" alt="Disinter button">
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a name="publish"></a>Publish/Revoke</h3>
+                        <ul>
+                            <li>
+                                <h4>Publish Item</h4>
+                                <p>
+                                    To <em>Publish</em> an item is to mark it for inclusion in your outgoing RSS feeds, presumably to be consumed by other readers or a reBlog plugin.
+                                </p>
+                                <p>
+                                    <img src="style/images/private-item.gif" alt="Publish button" width="64" height="20">
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Revoke Item</h4>
+                                <p>
+                                    To <em>Revoke</em> an item is to make it no no longer public
+                                </p>
+                                <p>
+                                    <img src="style/images/public-item.gif" alt="Revoke button" width="64" height="20">
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Publish Feed</h4>
+                                <p>
+                                    To <em>Publish</em> a feed is to set the default state for items coming from that feed as <em>published</em> (note this only applies to items forthcoming, not items currently in the database).
+                                </p>
+                                <p>
+                                    <img src="style/images/private-feed.gif" alt="Revoke button" width="48" height="14">
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Revoke Feed</h4>
+                                <p>
+                                    To <em>Revoke</em> a feed is to reset the default state so that fortcoming items are not marked as <em>published</em>.
+                                </p>
+                                <p>
+                                    <img src="style/images/public-feed.gif" alt="Publish button" width="48" height="14">
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a name="link_select"></a>Primary Link Selection/Unselection</h3>
+                        <ul>
+                            <li>
+                                <h4>Selected Link</h4>
+                                <p>
+                                    To <em>Select</em> a link within an item is to mark that link as the <em>primary</em> link that will be included with the item in any output feed.
+                                </p>
+                                <p>
+                                    <img src="style/images/selected.gif" alt="Selected Link button">
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Unselected Link</h4>
+                                <p>
+                                    The only way to <em>Unselect</em> a link is to <em>Select</em> a different link in that item.
+                                </p>
+                                <p>
+                                    <img src="style/images/unselected.gif" alt="Unselected Link button">
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><a name="metadata"></a>Metadata</h3>
+                        <ul>
+                            <li>
+                                <h4>Comments</h4>
+                                <p>
+                                    You can attach your personal commentray to items that you will publish.
+                                </p>
+                                <h4>Tags</h4>
+                                <p>
+                                    ReFeed lets you <em>tag</em> posts. Really it is just a text field that you can populate with keywords, for use in tag- and category-supporting systems such as del.icio.us, flickr, and Movable Type.
+                                </p>
+                                <p>
+                                    <a href="doc_img/15-items-one-comment-form.png" title="Click to view a full-size version of this screen shot"><img src="doc_img/15-items-one-comment-form.small.png" alt="Screenshot of comment form" width="467" height="315" border="1"></a>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>
+                    <a name="republish"></a>While the basic feed-reading in reFeed should speak for itself, the re-publishing features may require some explanation:
+                </p>
+                <ol>
+                    <li>
+                        <h3>Primary Link Selection</h3>
+                        <p>
+                            On the view page, for items that have multiple links embedded within their content, you are able to select which link should be the primary link in the output feed. Notice that each link (including the main title link) has an accompanying star. Simply select the preferred star to select the main link for that item.
+                        </p>
+                        <p>
+                            <a href="doc_img/16-items-one-published.png" title="Click to view a full-size version of this screen shot"><img src="doc_img/16-items-one-published.small.png" alt="Screenshot of page of items" width="467" height="315" border="1"></a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Preview/Edit page</h3>
+                        <p>
+                            This page which allows you to edit and preview any one item. You can change the title, primary link, or content of the item, and add comments and subject tags.
+                        </p>
+                        <p>
+                            This page also allows you to preview the item in a user-defined visual format so that you can see how the item will look in your final output blog. Edit the<code>style/templates/page-preview.tpl</code>file (include the link to your stylesheet) to match the HTML formatting in your nicely designed reBlog.
+                        </p>
+                        <p>
+                            <a href="doc_img/18-preview-edit.png" title="Click to view a full-size version of this screen shot"><img src="doc_img/18-preview-edit.small.png" alt="Screenshot of preview/edit interface" width="467" height="315" border="1"></a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3>RSS output</h3>
+                        <p>
+                            All items marked as published within the last 24 hours, or published in the past but re-edited within the last 24 hours, are displayed in the rss output (the <code>rss.php</code> page). This feed includes metadata for proper attribution of the original item author/blog/etc.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Incoming Item Updates</h3>
+                        <p>
+                            On import from your input feeds, items are not uniquely identified by simply by their feed and by their link. Now, items are uniquely identified one of two ways, depending on the structure of their source feed:
+                        </p>
+                        <p>
+                            If the source feed contains some kind of global unique identifier (GUID) for a item, such as a &lt;guid&gt; or &lt;id&gt; or &lt;dc:identifier&gt; element, this GUID is used. If a item is updated in its source feed, the same item is updateed in reFeed, and the items is marked as unread.
+                        </p>
+                        <p>
+                            Otherwise, items are identified uniquely by their feed, title, link, and content. This has positive effect of of catching updates to items in your input RSS feeds. It also has the consequence of retaining very similar copies of the same item if reFeed checks the same feed repeatedly while the author is updating his/her items.
+                        </p>
+                        <p>
+                            To keep from being assaulted with multiple copies of the same item when pouring through new content, reFeed has implemented the following policy: On import of any item, all earlier items from the same feed sharing the same link that have not been marked as <em>read</em> or <em>published</em> will be marked as <em>read</em>. They are still accessible, but only the newest version will be shown when viewing new items.
+                        </p>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <h2><a name="license"></a>License</h2>
+        <p>
+            reFeed is distributed under the GPL (see the <a href="LICENSE">LICENSE</a> file in this directory), though some of its included libraries (in<code>./library/</code>) are not.
+        </p>
+    </div>
+</body>
+</html>

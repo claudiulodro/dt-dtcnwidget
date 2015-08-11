@@ -1,0 +1,86 @@
+body
+{
+	background-color: #eee;
+	color: #000;
+}
+
+#head { background-color: #fff; } 
+
+#body
+{
+	background-color: #eee;
+	background-image: url("images/bg-body.gif");
+	background-repeat: repeat-x;
+}
+
+a#logo:hover, a#logo:active
+{
+    background-color: transparent;
+}
+
+ul.menu li
+{
+    color: #999;
+}
+
+ul.menu a
+{
+    color: #069;
+    text-decoration: none;
+	border-color: transparent;
+}
+
+ul.menu a:hover, ul.menu a:active
+{
+	color: #000;
+	border-color: #f90;
+}
+
+ul.menu a:hover, ul.menu a:active, .item .header h2 a:hover, .item .header h2 a:active, .item .header h3 a:hover, .item .header h3 a:active
+{
+	background-image: url("images/bg-active-anchor.gif");
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+
+.item, .item .header { border-color: #fff; }
+
+.item .header
+{
+	border-color: inherit inherit #fff inherit !important;
+	background-color: #ccc;
+	background-image: url("images/bg-public-head.gif");
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+
+.item .body
+{
+	background-color: #fff;
+}
+
+a, a:link
+{
+	color: #00c;
+	background-color: transparent;
+}
+
+a:visited
+{
+	color: #609;
+	background-color: transparent;
+}
+
+a:hover, a:active
+{
+	color: #000;
+	background-color: #ff0;
+}
+
+.preview-frame { border-color: #666; }
+
+.announcement
+{
+    border-color: #666;
+    background-color: #fff;
+}
